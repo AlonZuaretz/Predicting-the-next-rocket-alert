@@ -25,7 +25,7 @@ Each entry in the raw dataset includes:
 
 **Example (Raw):**
 
-![img.png](raw_alerts_data_example.png)
+![img.png](images/raw_alerts_data_example.png)
 #### Preprocessing
 1. **Timestamp Binning**: Alerts are grouped into 6-hour intervals, creating a single timestamp for combined alerts.
 2. **Normalization**: Time-related features are scaled using Min-Max normalization (e.g., hour 12:00 → 0.6667).
@@ -34,7 +34,7 @@ Each entry in the raw dataset includes:
 
 **Example (Processed):**
 
-![img.png](proc_alerts_data_example.png)
+![img.png](images/proc_alerts_data_example.png)
 
 ### Articles Dataset
 The **Articles Dataset** provides contextual information by embedding war-related news articles. These embeddings enrich the model’s temporal predictions with insights from real-world events.
@@ -47,7 +47,7 @@ Each entry in the raw dataset includes:
 - **Summary**: A brief description of the article content.
 
 **Example (Raw):**
-![img.png](raw_articles_data_example.png)
+![img.png](images/raw_articles_data_example.png)
 #### Preprocessing
 1. **Normalization**: Time-related features are Min-Max normalized similarly to the threats dataset.
 2. **Embedding Generation**: Titles and summaries are passed through AlephBERT, producing a 1536-dimensional embedding.
@@ -87,14 +87,14 @@ The model uses a **transformer-based dual-stream architecture** with a **symmetr
 ### Loss Function
 - A weighted binary cross-entropy loss balances class distribution by assigning higher weights to rare positive samples.
 
-![img.png](Architecture.png)
+![img.png](images/Architecture.png)
 
 ## Results
 The experimentation we focused on in this project dealt mostly with the model's archtecture.
 Constant Higher parameters during experemintation were:
 batch size of 16, learning rate of 1e-3, and hidden dimension of size 512.
 Below is a table of some of our experiments:
-![img.png](results_image.png)
+![img.png](images/results_image.png)
 As can be seen from the table, we noticed that the parameters in test 3 yielded the most successful results.
 In the final column (test 6) we took those parameters and trained for another 10 epochs. It can be seen that the results slightly improved.
 
